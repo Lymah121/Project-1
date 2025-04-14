@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class PolyAlphabeticCipher {
 
     private String alphabet;
@@ -69,12 +71,14 @@ public class PolyAlphabeticCipher {
     }
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         String alphabet = "abcdefghijklmnopqrstuvwxyz";
-        String key = "secret";
+        System.out.println("Enter the key: ");
+        String key = scanner.nextLine();
         PolyAlphabeticCipher cipher = new PolyAlphabeticCipher(alphabet, key);
 
-        String plaintext = "attackatdawn";
-        System.out.println("Plaintext: " + plaintext);
+        System.out.println("Enter the plaintext: ");
+        String plaintext = scanner.nextLine();
 
         String ciphertext = cipher.encrypt(plaintext);
         System.out.println("Ciphertext: " + ciphertext);
